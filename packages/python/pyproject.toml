@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling==1.32.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "revenue-integrity"
+version = "1.0.0"
+description = "Reconcile contracts, usage, invoices, payments and ledger state; detect revenue leakage and generate repair plans."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "API Disk Integrations" }]
+keywords = ["api", "sdk", "revenue-integrity"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Software Development :: Libraries",
+]
+dependencies = []
+
+[tool.hatch.build]
+ignore-vcs = true
+
+[project.urls]
+Homepage = "https://revenueintegrity-api.com/"
+Documentation = "https://revenueintegrity-api.com/#docs"
+Pricing = "https://revenueintegrity-api.com/#pricing"
+Privacy = "https://revenueintegrity-api.com/privacy"
+Terms = "https://revenueintegrity-api.com/terms"
+Source = "https://github.com/API-Disk-Integrations/revenue-integrity"
+Issues = "https://github.com/API-Disk-Integrations/revenue-integrity/issues"
+Changelog = "https://github.com/API-Disk-Integrations/revenue-integrity/blob/main/CHANGELOG.md"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/revenue_integrity"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/LICENSE",
+  "/README.md",
+  "/pyproject.toml",
+  "/src/revenue_integrity/__init__.py",
+]
